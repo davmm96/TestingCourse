@@ -14,11 +14,11 @@ interface PromotionDao {
     @Query("SELECT * FROM promotions")
     fun getAllPromotions(): Flow<List<PromotionEntity>>
 
-    @Query("SELECT * FROM products WHERE id=:id")
-    fun getProductById(id: String): Flow<PromotionEntity>
+    @Query("SELECT * FROM promotions WHERE id=:id")
+    fun getPromotionById(id: String): Flow<PromotionEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPromotions(products: List<PromotionEntity>)
+    suspend fun insertPromotions(promotions: List<PromotionEntity>)
 
     @Query("DELETE FROM promotions")
     suspend fun clearPromotions()

@@ -15,8 +15,7 @@ import com.example.testingcourse.productList.data.local.database.entity.Promotio
     version = 1,
     exportSchema = true
 )
-internal abstract class MiniMarketDatabase : RoomDatabase() {
-
+abstract class MiniMarketDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao
     abstract fun promotionDao(): PromotionDao
 
