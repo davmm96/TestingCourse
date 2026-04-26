@@ -3,6 +3,7 @@ package com.example.testingcourse.productList.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testingcourse.productList.domain.model.Product
+import com.example.testingcourse.productList.domain.model.SortOption
 import com.example.testingcourse.productList.domain.usecase.GetProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -41,7 +42,8 @@ class ProductListViewModel @Inject constructor(
                     ProductListUiState.Success(
                         products = products,
                         categories = categories,
-                        selectedCategory = null
+                        selectedCategory = null,
+                        sortOption = SortOption.NONE
                     )
             }
             .catch { e: Throwable ->
@@ -51,6 +53,10 @@ class ProductListViewModel @Inject constructor(
     }
 
     fun setCategory(category: String?) {
+        //TODO
+    }
+
+    fun setSortOption(sort: SortOption?) {
         //TODO
     }
 

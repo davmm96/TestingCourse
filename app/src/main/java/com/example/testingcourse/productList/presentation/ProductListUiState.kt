@@ -1,6 +1,7 @@
 package com.example.testingcourse.productList.presentation
 
 import com.example.testingcourse.productList.domain.model.Product
+import com.example.testingcourse.productList.domain.model.SortOption
 
 sealed class ProductListUiState {
     data object Loading : ProductListUiState()
@@ -9,6 +10,6 @@ sealed class ProductListUiState {
         val products: List<Product>,
         val categories: List<String>,
         val selectedCategory: String?,
-        //sortOption
+        val sortOption: SortOption
     ) : ProductListUiState()
 }

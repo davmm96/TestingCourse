@@ -2,4 +2,7 @@
     <string name="app_name" translatable="false">TestingCourse</string>
     <string name="all_categories">Todas</string>
     <string name="categories_label">Categorías</string>
+    <string name="price_sorting_asc">Precio ↑</string>
+    <string name="price_sorting_desc">Precio ↓</string>
+    <string name="discount_sorting">Descuento</string>
 </resources>
