@@ -70,6 +70,8 @@ fun FiltersMenu(
 
             HorizontalDivider()
 
+            Text(stringResource(R.string.sorting_label))
+
             Row(
                 Modifier
                     .fillMaxWidth(),
@@ -81,7 +83,7 @@ fun FiltersMenu(
                     onClick = { onSortSelected(PRICE_ASC) },
                     label = {
                         Text(
-                            stringResource(R.string.price_sorting_asc),
+                            stringResource(R.string.sort_by_price_asc),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }
@@ -93,7 +95,7 @@ fun FiltersMenu(
                     onClick = { onSortSelected(PRICE_DESC) },
                     label = {
                         Text(
-                            stringResource(R.string.price_sorting_desc),
+                            stringResource(R.string.sort_by_price_desc),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }
@@ -105,7 +107,7 @@ fun FiltersMenu(
                     onClick = { onSortSelected(DISCOUNT) },
                     label = {
                         Text(
-                            stringResource(R.string.discount_sorting),
+                            stringResource(R.string.sort_by_discount),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }

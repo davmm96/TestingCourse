@@ -2,7 +2,8 @@
 <resources>
     <string name="all_categories">All</string>
     <string name="categories_label">Categories</string>
-    <string name="price_sorting_asc">Price ↑</string>
-    <string name="price_sorting_desc">Price ↓</string>
-    <string name="discount_sorting">Discount</string>
+    <string name="sort_by_price_asc">Price ↑</string>
+    <string name="sort_by_price_desc">Price ↓</string>
+    <string name="sort_by_discount">Discount</string>
+    <string name="sorting_label">Order by</string>
 </resources>
