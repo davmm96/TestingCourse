@@ -68,7 +68,7 @@ fun ProductListScreen(
                         .fillMaxSize()
                         .padding(paddingValues)
                 ) {
-                    Text("Error", fontSize = 30.sp, color = Color.Red)
+                    Text(state.message, fontSize = 30.sp, color = Color.Red)
                 }
             }
 

@@ -33,5 +33,4 @@ fun NavGraph() {
         entryProvider = entries,
         onBack = { backstack.removeLastOrNull() }
     )
-
 }

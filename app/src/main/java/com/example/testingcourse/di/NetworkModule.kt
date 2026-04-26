@@ -23,9 +23,8 @@ object NetworkModule {
     @Provides
     @Singleton
     @Named("baseUrl")
-    fun provideBaseUrl(): String {
-        return "https://raw.githubusercontent.com/davmm96/TestingCourse-API/main/"
-    }
+    fun provideBaseUrl(): String =
+        "https://raw.githubusercontent.com/davmm96/TestingCourse-API/main/"
 
     @Provides
     @Singleton
@@ -49,13 +48,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideJson(): Json {
-        return Json {
+    fun provideJson(): Json =
+        Json {
             ignoreUnknownKeys = true
             isLenient = true
             coerceInputValues = true
         }
-    }
+
 
     @Provides
     @Singleton
@@ -74,7 +73,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMiniMarketApiService(retrofit: Retrofit): MiniMarketApiService {
-        return retrofit.create(MiniMarketApiService::class.java)
-    }
+    fun provideMiniMarketApiService(retrofit: Retrofit): MiniMarketApiService =
+        retrofit.create(MiniMarketApiService::class.java)
 }

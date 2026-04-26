@@ -22,35 +22,30 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideDispatchersProvider(defaultDispatchersProvider: DefaultDispatchersProvider): DispatchersProvider {
-        return defaultDispatchersProvider
-    }
+    fun provideDispatchersProvider(defaultDispatchersProvider: DefaultDispatchersProvider): DispatchersProvider =
+        defaultDispatchersProvider
 
     @Provides
     @Singleton
-    fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository {
-        return productRepositoryImpl
-    }
+    fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository =
+        productRepositoryImpl
 
     @Provides
-    fun providesProductDao(database: MiniMarketDatabase): ProductDao {
-        return database.productDao()
-    }
+    fun providesProductDao(database: MiniMarketDatabase): ProductDao =
+        database.productDao()
+
 
     @Provides
-    fun providesPromotionDao(database: MiniMarketDatabase): PromotionDao {
-        return database.promotionDao()
-    }
+    fun providesPromotionDao(database: MiniMarketDatabase): PromotionDao =
+        database.promotionDao()
+
 
     @Provides
     @Singleton
-    fun providesDatabase(@ApplicationContext context: Context): MiniMarketDatabase {
-        return Room.databaseBuilder(
+    fun providesDatabase(@ApplicationContext context: Context): MiniMarketDatabase =
+        Room.databaseBuilder(
             context = context,
             klass = MiniMarketDatabase::class.java,
-            name = "minimarket_database"
+            name = MiniMarketDatabase.DB_NAME
         ).build()
-    }
-
-
 }

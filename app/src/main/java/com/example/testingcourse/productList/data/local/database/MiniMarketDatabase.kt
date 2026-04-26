@@ -16,6 +16,10 @@ import com.example.testingcourse.productList.data.local.database.entity.Promotio
     exportSchema = true
 )
 abstract class MiniMarketDatabase : RoomDatabase() {
+
+    companion object {
+        const val DB_NAME = "minimarket_database"
+    }
     abstract fun productDao(): ProductDao
     abstract fun promotionDao(): PromotionDao
 
