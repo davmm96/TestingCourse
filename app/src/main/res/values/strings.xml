@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">TestingCourse</string>
+    <string name="app_name" translatable="false">TestingCourse</string>
+    <string name="all_categories">Todas</string>
+    <string name="categories_label">Categorías</string>
 </resources>

@@ -36,12 +36,22 @@ class ProductListViewModel @Inject constructor(
         _uiState.value = ProductListUiState.Loading
         getProductUseCase()
             .onEach { products: List<Product> ->
-                _uiState.value = ProductListUiState.Success(products)
+                val categories = products.map { it.category }.distinct().sorted()
+                _uiState.value =
+                    ProductListUiState.Success(
+                        products = products,
+                        categories = categories,
+                        selectedCategory = null
+                    )
             }
             .catch { e: Throwable ->
                 _uiState.value = ProductListUiState.Error(e.message.orEmpty())
             }
             .launchIn(viewModelScope)
+    }
+
+    fun setCategory(category: String?) {
+        //TODO
     }
 
 }
