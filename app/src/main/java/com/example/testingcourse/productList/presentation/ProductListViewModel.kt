@@ -22,10 +22,13 @@ class ProductListViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<ProductListUiState>(ProductListUiState.Loading)
+    private val _events = MutableSharedFlow<ProductListEvent>(extraBufferCapacity = 1)
+
+    val events: SharedFlow<ProductListEvent> = _events
     val uiState: StateFlow<ProductListUiState> = _uiState.asStateFlow()
 
-    private val _events = MutableSharedFlow<ProductListEvent>(extraBufferCapacity = 1)
-    val events: SharedFlow<ProductListEvent> = _events
+    private val _filtersVisible = MutableStateFlow<Boolean>(true)
+    val filtersVisible: StateFlow<Boolean> = _filtersVisible.asStateFlow()
 
 
     init {
@@ -58,6 +61,10 @@ class ProductListViewModel @Inject constructor(
 
     fun setSortOption(sort: SortOption?) {
         //TODO
+    }
+
+    fun setFiltersVisible(showFilter: Boolean) {
+        _filtersVisible.value = showFilter
     }
 
 }
