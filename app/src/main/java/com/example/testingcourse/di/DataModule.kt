@@ -8,7 +8,9 @@ import com.example.testingcourse.productList.data.local.database.MiniMarketDatab
 import com.example.testingcourse.productList.data.local.database.dao.ProductDao
 import com.example.testingcourse.productList.data.local.database.dao.PromotionDao
 import com.example.testingcourse.productList.data.repository.ProductRepositoryImpl
+import com.example.testingcourse.productList.data.repository.PromotionRepositoryImpl
 import com.example.testingcourse.productList.domain.repository.ProductRepository
+import com.example.testingcourse.productList.domain.repository.PromotionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +31,12 @@ object DataModule {
     @Singleton
     fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository =
         productRepositoryImpl
+
+
+    @Provides
+    @Singleton
+    fun providePromotionRepository(promotionRepositoryImpl: PromotionRepositoryImpl): PromotionRepository =
+        promotionRepositoryImpl
 
     @Provides
     fun providesProductDao(database: MiniMarketDatabase): ProductDao =

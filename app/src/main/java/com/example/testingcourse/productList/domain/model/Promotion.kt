@@ -1,12 +1,18 @@
 package com.example.testingcourse.productList.domain.model
 
+import java.time.Instant
+
+enum class PromotionType {
+    BUY_X_PAY_Y,
+    PERCENT
+}
+
 data class Promotion(
     val id: String,
-    val productId: String,
-    val type: String,
-    val percent: Int? = null,
-    val buyX: Int? = null,
-    val payY: Int? = null,
-    val startAtEpoch: Long? = null,
-    val endAtEpoch: Long? = null
+    val productIds: List<String>,
+    val type: PromotionType,
+    val value: Double,
+    val buyQuantity: Int? = null,
+    val startTime: Instant,
+    val endTime: Instant
 )
